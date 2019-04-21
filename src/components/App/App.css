@@ -1,0 +1,60 @@
+canvas {
+  width: 298px;
+  height: 421px;
+  border: 2px solid #2196F3;
+  margin: 16px;
+}
+
+input {
+  height: 50px;
+  margin-bottom: 20px;
+  font-family: 'Cousine', sans-serif;
+  font-size: 20px;
+  padding: 0 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+button {
+  height: 50px;
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Cousine', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+@media print {
+
+  html, body {
+    height:100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  form {
+    display: none;
+  }
+}
+
+@page { size: auto;  margin: 0mm; }
