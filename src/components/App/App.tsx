@@ -7,13 +7,12 @@ import PrintButton from '../PrintButton/PrintButton';
 import ReactToPrint from 'react-to-print';
 
 function App() {
-  const inputEl = useRef(null);
+  const canvasRef = useRef(null);
   const [text, setText] = useState('');
   const [fontFamily, setFontFamily] = useState('Roboto');
   const [fontSize, setFontSize] = useState(48);
   const [fontStyle, setFontStyle] = useState('normal');
-  const [patternImageUrl, setPatternImageUrl] = useState(null);
-  console.log(patternImageUrl)
+  const [patternImageUrl, setPatternImageUrl] = useState();
   const canvasSize = useMemo(() => ({
     width: 595 / ((842 + 70) / window.innerHeight),
     height: 842 / ((842 + 70) / window.innerHeight)
@@ -21,7 +20,7 @@ function App() {
 
   return (
     <div className="row">
-      <div ref={inputEl}>
+      <div ref={canvasRef}>
         <Canvas
           pixelRatio={2}
           width={canvasSize.width}
@@ -46,7 +45,8 @@ function App() {
         <PatternForm onChange={setPatternImageUrl}/>
         <ReactToPrint
           trigger={() => <button><PrintButton/></button>}
-          content={() => inputEl.current}
+          // @ts-ignore
+          content={() => canvasRef.current}
         />
       </div>
     </div>
