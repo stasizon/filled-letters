@@ -1,4 +1,5 @@
 import React from 'react';
+import {Input, Typography, Col} from "antd";
 
 interface PatternFormProps {
   onChange(value: any): void
@@ -6,10 +7,10 @@ interface PatternFormProps {
 
 function PatternForm(props: PatternFormProps) {
   return (
-    <div className="text-form">
-      <h2>Choose pattern</h2>
-      <input className="text-input" type="text" onChange={({target}) => props.onChange(target.value)}/>
-    </div>
+    <Col span={24}>
+      <Typography.Title level={1}>Choose pattern</Typography.Title>
+      <Input size="large" placeholder="Image URL" onChange={(value) => props.onChange(value)}/>
+    </Col>
   );
 }
 

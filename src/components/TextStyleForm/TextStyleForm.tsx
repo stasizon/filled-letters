@@ -1,46 +1,51 @@
 import React from 'react';
+import {Typography, Select, InputNumber, Col, Row} from "antd";
 
 interface TextStyleFormProps {
   setFontFamily(value: any): void;
+
   setFontSize(value: any): void;
+
   setFontStyle(value: any): void;
 }
 
 function TextStyleForm(props: TextStyleFormProps) {
   return (
-    <div className="text-form">
-      <h2>Set style</h2>
-      <div className="row center full-width select-group">
-        <div className="column select-wrapper">
-          <label>Font</label>
-          <select defaultValue="Roboto" onChange={({target}) => props.setFontFamily(target)}>
-            <option>Montserrat</option>
-            <option>Roboto</option>
-          </select>
-        </div>
-        <div className="column select-wrapper">
-          <label>Size</label>
-          <select defaultValue={64} onChange={({target}) => props.setFontSize(target)}>
-            <option>64</option>
-            <option>72</option>
-            <option>96</option>
-            <option>144</option>
-            <option>288</option>
-            <option>576</option>
-            <option>720</option>
-            <option>864</option>
-          </select>
-        </div>
-        <div className="column select-wrapper">
-          <label>Style</label>
-          <select defaultValue="normal" onChange={({target}) => props.setFontStyle(target)}>
-            <option value="normal">Normal</option>
-            <option value="bold">Bold</option>
-            <option value="italic">Italic</option>
-          </select>
-        </div>
-      </div>
-    </div>
+    <Col className="input-group" span={24}>
+      <Typography.Title level={1}>Set style</Typography.Title>
+      <Row gutter={[16, 16]}>
+        <Col span={8}>
+          <label><Typography.Title level={4}>Font</Typography.Title></label>
+          <Select
+            defaultValue="roboto"
+            className="select-input"
+            size="large"
+            onChange={props.setFontFamily}
+            showSearch
+          >
+            <Select.Option value="montserrat">Montserrat</Select.Option>
+            <Select.Option value="roboto">Roboto</Select.Option>
+          </Select>
+        </Col>
+        <Col span={8}>
+          <label><Typography.Title level={4}>Size</Typography.Title></label>
+          <InputNumber defaultValue={48} className="select-input" size="large" onChange={props.setFontSize}/>
+        </Col>
+        <Col span={8}>
+          <label><Typography.Title level={4}>Style</Typography.Title></label>
+          <Select
+            defaultValue="normal"
+            className="select-input"
+            size="large"
+            onChange={props.setFontStyle}
+          >
+            <Select.Option value="normal">Normal</Select.Option>
+            <Select.Option value="bold">Bold</Select.Option>
+            <Select.Option value="italic">Italic</Select.Option>
+          </Select>
+        </Col>
+      </Row>
+    </Col>
   );
 }
 

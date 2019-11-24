@@ -1,10 +1,19 @@
-html, body {
+html {
   margin: 0;
-  background-color: #F5F5F5;
+  background-color: #EEEEEE;
+}
+
+body {
+  background-color: #EEEEEE !important;
+}
+
+.header {
+  height: 48px !important;
+  line-height: 48px !important;
 }
 
 .konvajs-content {
-  margin: 30px;
+  margin: 20px;
   background-color: #fff;
   box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
@@ -14,51 +23,17 @@ html, body {
   flex-direction: row;
 }
 
-.full-width {
-  width: 100%;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.center {
-  justify-content: center;
-}
-
 .select-wrapper {
   align-items: center;
 }
 
 .select-group {
-  width: 700px;
   justify-content: space-around;
 }
 
-select {
-  width: 200px;
-  padding: 0 20px;
-  height: 60px;
-  border: 2px solid #000;
-  border-radius: 16px;
-  outline: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
-  background-color: #fff;
-}
-
-.input-column {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  margin: 30px;
-}
-
 .column {
-  display: flex;
-  flex-direction: column;
+  width: 100% ;
+  margin: 20px;
 }
 
 .image-picker {
@@ -66,24 +41,6 @@ select {
   height: 150px;
   margin: 0 15px 15px;
   cursor: pointer;
-}
-
-h2 {
-  margin: 0 0 30px 0;
-  font-size: 36px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.text-input {
-  width: 100%;
-  max-width: 400px;
-  padding: 0 20px;
-  height: 60px;
-  border: 2px solid #000;
-  border-radius: 16px;
-  outline: none;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
 }
 
 .text-form {
@@ -94,14 +51,14 @@ h2 {
   margin-bottom: 70px;
 }
 
-label {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  margin-bottom: 15px;
+.select-input {
+  width: 100% !important;
 }
 
 .print-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
   padding: 20px;
   background-color: black;
   color: #fff;
@@ -109,6 +66,7 @@ label {
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  font-size: 24px;
   border-radius: 16px;
 }
 
@@ -135,4 +93,15 @@ button {
   background: none;
   border: none;
   outline: none;
+}
+
+.input-group {
+  margin-bottom: 50px;
+}
+
+.print-button {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+  max-width: 200px;
 }
