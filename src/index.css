@@ -32,8 +32,9 @@ body {
 }
 
 .column {
-  width: 100% ;
+  width: 100%;
   margin: 20px;
+  min-width: 400px;
 }
 
 .image-picker {
@@ -53,21 +54,6 @@ body {
 
 .select-input {
   width: 100% !important;
-}
-
-.print-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  padding: 20px;
-  background-color: black;
-  color: #fff;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  border-radius: 16px;
 }
 
 @media print {
@@ -99,9 +85,8 @@ button {
   margin-bottom: 50px;
 }
 
-.print-button {
-  position: fixed !important;
-  bottom: 20px;
-  right: 20px;
-  max-width: 200px;
+.app-title {
+  color: #fff !important;
+  margin: 0;
+  line-height: 50px !important;
 }

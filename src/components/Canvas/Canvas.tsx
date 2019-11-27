@@ -1,10 +1,9 @@
 import React, {useRef} from 'react';
 import {Stage, Layer, Text} from 'react-konva';
-import useImage from 'use-image';
 
 interface CanvasProps {
   pixelRatio: number;
-  patternImageUrl?: string;
+  patternImage?: any;
   width: number;
   height: number;
   fontFamily: string;
@@ -14,7 +13,6 @@ interface CanvasProps {
 }
 
 function Canvas(props: CanvasProps) {
-  const [image] = useImage(props.patternImageUrl || '');
   const inputEl = useRef(null);
 
   return (
@@ -29,12 +27,18 @@ function Canvas(props: CanvasProps) {
             fontFamily={props.fontFamily}
             fontSize={props.fontSize}
             fontStyle={props.fontStyle}
-            fillPatternImage={image}
+            fillPatternImage={props.patternImage}
             text={props.text}
             fillPriority="pattern"
             draggable
+            onDragStart={() => {
+              document.body.style.cursor = "grabbing";
+            }}
+            onDragEnd={() => {
+              document.body.style.cursor = "grab";
+            }}
             onMouseEnter={() => {
-              document.body.style.cursor = "pointer";
+              document.body.style.cursor = "grab";
             }}
             onMouseLeave={() => {
               document.body.style.cursor = "default";
