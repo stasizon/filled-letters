@@ -1,14 +1,14 @@
 import React, {useState, useRef} from 'react';
 import Canvas from '../Canvas/Canvas';
-import TextInput from '../TextInput/TextInput';
-import TextStyleForm from '../TextStyleForm/TextStyleForm';
-import PatternForm from '../PatternForm/PatternForm';
+import CanvasForm from '../CanvasForm/CanvasForm';
+import ImageSelectEditor from '../ImageSelectEditor/ImageSelectEditor';
 import PrintButton from '../PrintButton/PrintButton';
 import ReactToPrint from 'react-to-print';
 import {Layout, Col, Spin, Typography} from 'antd';
 import useImage from "use-image";
 import useFonts from '../../utils/hooks/useFonts';
 import useProportionalSize from "../../utils/hooks/useProportionalSize";
+import styles from './App.module.css';
 
 const {Header, Content} = Layout;
 
@@ -23,13 +23,17 @@ function App() {
   const [canvasWidth, canvasHeight] = useProportionalSize(595, 842, 120);
   const [image, status] = useImage(patternImageUrl);
 
+  if (!isFontsLoaded) {
+    return <span>Test</span>
+  }
+
   return (
     <Layout>
-      <Header className="header">
-        <Typography.Title className="app-title" level={3}>Filled letters</Typography.Title>
+      <Header className={styles.header}>
+        <Typography.Title className={styles.title} level={3}>Filled letters</Typography.Title>
       </Header>
       <Content>
-        <div className="row">
+        <div className={styles.wrapper}>
           <div ref={canvasRef}>
             <Canvas
               pixelRatio={2}
@@ -42,18 +46,16 @@ function App() {
               patternImage={image}
             />
           </div>
-          <Col className="column">
+          <Col className={styles.column}>
             <Spin spinning={!isFontsLoaded} tip="Loading..." size="large">
-              <TextInput
+              <CanvasForm
                 value={text}
                 onChange={setText}
-              />
-              <TextStyleForm
                 setFontFamily={setFontFamily}
                 setFontSize={setFontSize}
                 setFontStyle={setFontStyle}
               />
-              <PatternForm
+              <ImageSelectEditor
                 onChange={setPatternImageUrl}
                 imageLoadStatus={patternImageUrl ? status : 'loaded'}
               />

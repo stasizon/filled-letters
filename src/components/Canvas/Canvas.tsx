@@ -18,7 +18,7 @@ function Canvas(props: CanvasProps) {
   return (
     <React.Fragment>
       <Stage
-        className="preview"
+        className='preview'
         width={props.width}
         height={props.height}
       >
@@ -31,10 +31,10 @@ function Canvas(props: CanvasProps) {
             text={props.text}
             fillPriority="pattern"
             draggable
-            onDragStart={() => {
+            onMouseDown={() => {
               document.body.style.cursor = "grabbing";
             }}
-            onDragEnd={() => {
+            onMouseUp={() => {
               document.body.style.cursor = "grab";
             }}
             onMouseEnter={() => {

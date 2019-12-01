@@ -4,7 +4,7 @@ function useProportionalSize(startWidth: number, startHeight: number, correct: n
   const {width, height} = useMemo(() => ({
     width: startWidth / ((startHeight + correct) / window.innerHeight),
     height: startHeight / ((startHeight + correct) / window.innerHeight)
-  }), []);
+  }), [startWidth, startHeight, correct]);
 
   return [width, height]
 }

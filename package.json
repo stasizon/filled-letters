@@ -15,7 +15,8 @@
     "react-scripts": "3.2.0",
     "react-to-print": "^2.5.0",
     "typescript": "^3.7.2",
-    "use-image": "^1.0.5"
+    "use-image": "^1.0.5",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,5 +32,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/webfontloader": "^1.6.29",
+    "jest-canvas-mock": "^2.2.0"
+  }
 }

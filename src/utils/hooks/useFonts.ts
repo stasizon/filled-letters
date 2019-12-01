@@ -1,16 +1,20 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
+import WebFont from "webfontloader";
 
 function useFonts() {
   const [isFontsLoaded, setIsFontsLoaded] = useState(false);
 
-  useEffect(() => {
-    // @ts-ignore
-    document.fonts.ready.then((fontFaceSet) => {
-      if (fontFaceSet.status === 'loaded') {
+  if (!isFontsLoaded) {
+    WebFont.load({
+      google: {
+        families: ['Montserrat:400,500,600:cyrillic', 'Roboto:400,700,900:cyrillic']
+      },
+      classes: false,
+      active: () => {
         setIsFontsLoaded(true)
       }
     });
-  });
+  }
 
   return [isFontsLoaded];
 }

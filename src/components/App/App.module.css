@@ -1,0 +1,21 @@
+.header {
+  height: 48px !important;
+  line-height: 48px !important;
+}
+
+.title {
+  color: #fff !important;
+  margin: 0 !important;
+  line-height: 48px !important;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  width: 100%;
+  margin: 20px;
+  min-width: 400px;
+}

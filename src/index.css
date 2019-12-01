@@ -7,53 +7,10 @@ body {
   background-color: #EEEEEE !important;
 }
 
-.header {
-  height: 48px !important;
-  line-height: 48px !important;
-}
-
 .konvajs-content {
   margin: 20px;
   background-color: #fff;
   box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.select-wrapper {
-  align-items: center;
-}
-
-.select-group {
-  justify-content: space-around;
-}
-
-.column {
-  width: 100%;
-  margin: 20px;
-  min-width: 400px;
-}
-
-.image-picker {
-  width: 150px;
-  height: 150px;
-  margin: 0 15px 15px;
-  cursor: pointer;
-}
-
-.text-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 70px;
-}
-
-.select-input {
-  width: 100% !important;
 }
 
 @media print {
@@ -73,20 +30,4 @@ body {
     width: 100% !important;
     height: 100% !important;
   }
-}
-
-button {
-  background: none;
-  border: none;
-  outline: none;
-}
-
-.input-group {
-  margin-bottom: 50px;
-}
-
-.app-title {
-  color: #fff !important;
-  margin: 0;
-  line-height: 50px !important;
 }

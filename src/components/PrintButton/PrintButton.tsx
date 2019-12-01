@@ -1,9 +1,6 @@
 import React from 'react';
 import { Button, Icon } from 'antd';
-// @ts-ignore
-import * as styles from './PrintButton.less';
-
-console.log(styles.print)
+import styles from './PrintButton.module.css';
 
 function PrintButton() {
   return (

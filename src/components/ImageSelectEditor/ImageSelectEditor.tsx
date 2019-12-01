@@ -1,12 +1,12 @@
 import React from 'react';
 import {Input, Typography, Col} from "antd";
 
-interface PatternFormProps {
+interface ImageSelectEditorProps {
   onChange(value: any): void
   imageLoadStatus: string
 }
 
-function PatternForm(props: PatternFormProps) {
+function ImageSelectEditor(props: ImageSelectEditorProps) {
   return (
     <Col span={24}>
       <Typography.Title level={1}>Choose pattern</Typography.Title>
@@ -20,4 +20,4 @@ function PatternForm(props: PatternFormProps) {
   );
 }
 
-export default PatternForm;
+export default ImageSelectEditor;
