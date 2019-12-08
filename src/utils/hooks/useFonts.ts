@@ -7,7 +7,7 @@ function useFonts() {
   if (!isFontsLoaded) {
     WebFont.load({
       google: {
-        families: ['Montserrat:400,500,600:cyrillic', 'Roboto:400,700,900:cyrillic']
+        families: ['Montserrat:400,500,600', 'Roboto:400,700,900']
       },
       classes: false,
       active: () => {

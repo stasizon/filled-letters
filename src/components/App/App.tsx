@@ -23,10 +23,6 @@ function App() {
   const [canvasWidth, canvasHeight] = useProportionalSize(595, 842, 120);
   const [image, status] = useImage(patternImageUrl);
 
-  if (!isFontsLoaded) {
-    return <span>Test</span>
-  }
-
   return (
     <Layout>
       <Header className={styles.header}>
