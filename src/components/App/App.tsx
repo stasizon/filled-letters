@@ -57,7 +57,6 @@ function App() {
               />
               <ReactToPrint
                 trigger={() => <a><PrintButton/></a>}
-                // @ts-ignore
                 content={() => canvasRef.current}
               />
             </Spin>

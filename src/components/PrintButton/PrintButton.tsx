@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Icon } from 'antd';
+import { Button } from 'antd';
+import {PrinterFilled} from '@ant-design/icons';
 import styles from './PrintButton.module.css';
 
 function PrintButton() {
   return (
     <Button className={styles.print} type="primary" size="large">
-      <Icon type="printer" theme="filled" />
-      PRINT
+      <PrinterFilled /> PRINT
     </Button>
   );
 }
